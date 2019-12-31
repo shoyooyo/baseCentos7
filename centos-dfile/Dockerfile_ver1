@@ -1,0 +1,15 @@
+FROM centos:centos7
+
+LABEL org.label-schema.name="CentOS Base Image" \
+    org.label-schema.vendor="CentOS"
+
+RUN yum -y install awk \
+    yum -y install which \
+    yum -y install sed \
+    yum -y install bzip2 \
+    yum clean all
+
+RUN yum -y install sudo \
+    yum clean all
+
+CMD ["/bin/bash"]
